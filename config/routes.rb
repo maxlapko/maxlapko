@@ -1,6 +1,8 @@
 Satelite::Application.routes.draw do
 
-
+  get "site/about"
+  get "site/contact"
+  resources :users
   resources :posts
 
   # The priority is based upon order of creation:
