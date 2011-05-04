@@ -1,2 +1,13 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+    $('#editbox_search').focus(function() {
+        if ($(this).val() == 'Search our site:') {
+            $(this).val('');
+        }
+    });
+
+    $('#editbox_search').blur(function() {
+        if (!$(this).val()) {
+            $(this).val('Search our site:');
+        }
+    });
+});

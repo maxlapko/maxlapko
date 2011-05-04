@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.xml
   def index
     @posts = Post.all
-
+    @nav = 'home'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }

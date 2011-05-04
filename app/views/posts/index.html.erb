@@ -1,31 +1,34 @@
-<h1>Listing posts</h1>
+<p class="spec"><%= link_to 'New Post', new_post_path %></p>
+<% if @posts.any? %>
+    <% @posts.each do |post| %>
+        <div class="article">
+          <h2><%= post.title %></h2>
+          <p class="infopost">Posted <span class="date"><%= post.created_at.strftime("%d-%B-%Y %H:%M") %></span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments <span>(11)</span></a></p>
+          <div class="clr"></div>
+          <div class="img"><img src="images/img1.jpg" width="179" height="207" alt="" class="fl" /></div>
+          <div class="post_content">
+            <p><%= post.content %></p>
+            <p class="spec"><%= link_to 'Read more >> ', post, :class => 'rm' %></p>
+          </div>
+          <div class="clr"></div>
+        </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Tags</th>
-    <th>Status</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= post.tags %></td>
-    <td><%= post.status %></td>
-    <td><%= post.user_id %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+        <!--<tr>-->
+        <!--<td>#post.title</td>-->
+        <!--<td>#post.content %></td>-->
+        <!--<td>#post.tags %></td>-->
+        <!--<td>#post.status %></td>-->
+        <!--<td>#post.user_id %></td>-->
+        <!--<td>#link_to 'Show', post %></td>-->
+        <!--<td>#link_to 'Edit', edit_post_path(post) %></td>-->
+        <!--<td>#link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>-->
+        <!--</tr>-->
+        <!---->
+    <% end %>
+<% else %>
+    <h2>Постов не было найдено.</h2>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Post', new_post_path %>
+
+

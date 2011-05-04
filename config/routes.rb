@@ -1,7 +1,9 @@
 Satelite::Application.routes.draw do
 
-  get "site/about"
-  get "site/contact"
+  match '/contact', :to => 'site#contact'
+  match '/about', :to => 'site#about'
+  # get "site/about"
+  # get "site/contact"
   resources :users
   resources :posts
 

@@ -7,4 +7,8 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+
+  def navigate(page)
+    (@nav == page) ? 'active' : ''
+  end
 end
