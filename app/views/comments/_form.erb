@@ -1,0 +1,22 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <ol>
+    <li>
+      <%= f.label 'Автор :' %>
+      <%= f.text_field :author, :class => 'text' %>
+    </li>
+    <li>
+      <%= f.label 'Email :' %>
+      <%= f.text_field :email, :class => 'text' %>
+
+    </li>
+    <li>
+      <%= f.label 'Содержание :' %>
+      <%= f.text_area :content, :rows => '8', :cols => '50' %>
+
+    </li>
+    <li>
+      <%= f.submit :type => 'image', :src => '/images/submit.gif', :class => 'send' %>
+      <div class="clr"></div>
+    </li>
+  </ol>
+<% end %>
