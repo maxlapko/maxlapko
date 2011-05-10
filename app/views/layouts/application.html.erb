@@ -3,7 +3,7 @@
 <head>
 <title><%= title %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <%= render 'layouts/include_tags' %>
+    <%= render :partial => 'layouts/include_tags' %>
 </head>
 <body>
 <div class="main">
@@ -14,7 +14,7 @@
           <a href="/">Fenix<span>max</span><small>Company Slogan Here</small></a>
         </h1>
       </div>
-      <%= render 'layouts/menu_navigation' %>
+      <%= render :partial => 'layouts/menu_navigation' %>
       <div class="slider">
         <div id="coin-slider">
           <a href="#"><img src="/images/slide1.jpg" width="960" height="200" alt="" /></a>
